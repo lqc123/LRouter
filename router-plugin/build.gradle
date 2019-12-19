@@ -1,0 +1,42 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+apply plugin: 'com.novoda.bintray-release'
+publish {
+  userOrg = 'lqc'
+  groupId = 'com.lrouter'
+  artifactId = 'router-plugin'
+  publishVersion = '1.0.0'
+  desc = 'router plugin'
+  website = 'https://github.com/lqc123/LRouter'
+}
+dependencies {
+  implementation localGroovy()
+  implementation gradleApi()
+  implementation 'com.android.tools.build:gradle:3.1.2'
+  implementation 'org.ow2.asm:asm:5.0.3'
+  implementation 'org.ow2.asm:asm-commons:5.0.3'
+  implementation group: 'org.javassist', name: 'javassist', version: '3.20.0-GA'
+
+}
+repositories {
+  maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+  jcenter()
+  mavenCentral()
+}
+
+
+//uploadArchives {
+//  repositories {
+//    mavenDeployer {
+//      //设置插件的GAV参数
+//      pom.groupId = 'com.local.maven'
+//      pom.artifactId = '-router-plugin'
+//      pom.version = 'local'
+//      //文件发布到下面目录
+//      repository(url: uri('../repo'))
+//    }
+//  }
+//}

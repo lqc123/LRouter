@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LRouter.iml" filepath="$PROJECT_DIR$/LRouter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-module/app-module.iml" filepath="$PROJECT_DIR$/app-module/app-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-module2/app-module2.iml" filepath="$PROJECT_DIR$/app-module2/app-module2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/router-annotation/router-annotation.iml" filepath="$PROJECT_DIR$/router-annotation/router-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/router-app/router-app.iml" filepath="$PROJECT_DIR$/router-app/router-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/router-compiler/router-compiler.iml" filepath="$PROJECT_DIR$/router-compiler/router-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/router-core/router-core.iml" filepath="$PROJECT_DIR$/router-core/router-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/router-plugin/router-plugin.iml" filepath="$PROJECT_DIR$/router-plugin/router-plugin.iml" />
+    </modules>
+  </component>
+</project>

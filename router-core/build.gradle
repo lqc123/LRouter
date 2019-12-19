@@ -1,0 +1,15 @@
+apply from: "$cfg.rootPath/config/lib_module.gradle"
+dependencies {
+    compileOnly "$cfg.annotation"
+    implementation "$cfg.supportAnnotations"
+    implementation "$cfg.supportV4"
+}
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'lqc'
+    groupId = 'com.lrouter'
+    artifactId = 'router-core'
+    publishVersion = '1.0.0'
+    desc = 'router core module'
+    website = 'https://github.com/lqc123/LRouter'
+}

@@ -1,0 +1,97 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: "router.plugin"
+def localPath = project.rootProject.projectDir.absolutePath
+buildscript {
+    repositories {
+
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://dl.bintray.com/lqc/maven" }
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.novoda:bintray-release:0.9.1'
+        classpath 'com.lrouter:router-plugin:1.0.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+//        maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+        maven { url "https://dl.bintray.com/lqc/maven" }
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+def supportVersion = '26.0.0'
+ext {
+    cfg = [
+            buildToolsVersion    : '26.0.3',
+            compileSdkVersion    : 26,
+            minSdkVersion        : 16,
+            targetSdkVersion     : 26,
+            versionCode          : 1,
+            versionName          : "1.0.0",
+            supportLibraryVersion: "${supportVersion}",
+            rootPath             : "${localPath}",
+            recyclerview         : "com.android.support:recyclerview-v7:${supportVersion}",
+            supportAnnotations   : "com.android.support:support-annotations:${supportVersion}",
+            appcompat            : "com.android.support:appcompat-v7:${supportVersion}",
+            design               : "com.android.support:design:${supportVersion}",
+            supportV4            : "com.android.support:support-v4:${supportVersion}",
+            compiler             : "com.lrouter:router-compiler:1.0.0",
+            core                 : "com.lrouter:router-core:1.0.0",
+            annotation           : "com.lrouter:router-annotation:1.0.0"
+    ]
+
+}
+subprojects {
+    // 下面三行
+    tasks.withType(Javadoc) { // 新增
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
+
+    tasks.withType(Javadoc) {
+        options {
+            encoding "UTF-8"
+            charSet 'UTF-8'
+        }
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+    afterEvaluate { project ->
+        if (project.hasProperty("android")) {
+            android {
+                compileSdkVersion cfg.compileSdkVersion
+                buildToolsVersion cfg.buildToolsVersion
+                defaultConfig {
+                    targetSdkVersion cfg.targetSdkVersion
+                }
+                lintOptions {
+                    abortOnError false
+                }
+            }
+            //added begin
+//            dependencies {
+//                compile "$cfg.appcompat"
+//                compile "$cfg.recyclerview"
+//                compile "$cfg.design"
+//                compile "$cfg.supportAnnotations"
+//            }
+            //added end
+        }
+    }
+}

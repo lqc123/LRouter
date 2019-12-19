@@ -1,0 +1,6 @@
+apply from: "$cfg.rootPath/config/lib_module.gradle"
+dependencies {
+    implementation "$cfg.appcompat"
+    implementation project(':base')
+    annotationProcessor "$cfg.compiler"
+}

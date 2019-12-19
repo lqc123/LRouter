@@ -1,0 +1,21 @@
+
+android {
+    defaultConfig {
+        javaCompileOptions {
+
+            annotationProcessorOptions {
+//                includeCompileClasspath true
+                println project.getName()
+                if (project.plugins.hasPlugin("com.android.application")) {
+                    def allModules = project.rootProject.properties.get("allOtherModules", "") + + ","  + project.rootProject.properties.get("localMavenModules", "") + "," + project.rootProject.properties.get("localRequireMavenModules", "") + "," + project.rootProject.properties.get("componentRountModules", "")
+                    arguments = [moduleName: project.getName(), allModuleNames: allModules] }
+                else {
+                    arguments = [moduleName: project.getName()]
+                }
+
+            }
+        }
+    }
+}
+dependencies {
+}

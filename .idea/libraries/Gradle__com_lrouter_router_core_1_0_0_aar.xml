@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.lrouter:router-core:1.0.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/router-core-1.0.0.aar/6222714e6335ae0e1155c852793cf25a/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/router-core-1.0.0.aar/6222714e6335ae0e1155c852793cf25a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/router-core-1.0.0.aar/6222714e6335ae0e1155c852793cf25a/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.lrouter/router-core/1.0.0/50e7704dc38681e3f8c21b04ada51ec20470ecf4/router-core-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+apply plugin: 'com.novoda.bintray-release'
+
+def siteUrl = 'https://github.com/lqc123/LRouter'      // 项目的主页   这个是说明，可随便填
+publish {
+    userOrg = 'lqc'
+    groupId = 'com.lrouter'
+    artifactId = 'router-annotation'
+    publishVersion = '1.0.0'
+    desc = 'router annotation'
+    website = siteUrl
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+

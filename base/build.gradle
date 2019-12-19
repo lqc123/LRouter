@@ -1,0 +1,5 @@
+apply from: "$cfg.rootPath/config/lib_module.gradle"
+dependencies {
+    api "$cfg.core"
+    api "$cfg.annotation"
+}
